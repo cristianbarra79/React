@@ -1,4 +1,5 @@
 import React from 'react'
+import CartWidget from '../Stateless/CartWidget'
 import "./NavBar.css"
 
 const Navbar = () => {
@@ -15,6 +16,7 @@ const Navbar = () => {
                     <li><a href="#">Ayuda</a></li>
                 </ul>
             </nav>
+            <CartWidget/>
         </header>
 
     )
