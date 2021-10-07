@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import ItemCount from '../ItemCount/ItemCount';
 import "./Item.css"
 
-const Item = ({nombre,descripcion,stock, initial}) => {
+const Item = ({nombre, descripcion, stock, img, precio, initial}) => {
 
     return (
         <article>
@@ -17,7 +17,7 @@ const Item = ({nombre,descripcion,stock, initial}) => {
                 <CardMedia
                     component="img"
                     height="140"
-                    image="https://media.revistagq.com/photos/5f08621564f52a842c7f9a83/3:4/w_2262,h_3016,c_limit/hamburguesa%20the%20fitzgerald.jpg"
+                    image={img}
                     alt="burguer"
                     />
                 <CardContent>
@@ -26,12 +26,12 @@ const Item = ({nombre,descripcion,stock, initial}) => {
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                     {descripcion}
-                    </Typography>
+                    </Typography>                    
                 </CardContent>
-
-                <ItemCount stock={stock} initial={initial}/>
-                
-                
+                <Typography variant="h4" color="text.primary">
+                    ${precio}
+                </Typography>
+                <ItemCount stock={stock} initial={initial}/>                                
                 <CardActions>                                        
                     <Button size="small">Comprar</Button>            
                 </CardActions>
