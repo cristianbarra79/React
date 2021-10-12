@@ -1,0 +1,36 @@
+.contenedor {
+    display: grid;
+    justify-items: center;    
+    margin: auto;
+    width: 60%;
+    height: 75vh;
+    grid-template-areas:
+        "h1 h1"
+        "img h2"
+        "img h3"
+        "img count";
+    grid-template-rows: 1fr 2fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr;    
+  }
+  
+  .contenedor > h1 {
+    grid-area: h1;    
+  }
+  
+  .contenedor > img {
+    grid-area: img;
+    max-width: 100%;
+    max-height: 100%;    
+  }
+  
+  .contenedor > h2 {
+    grid-area: h2;
+  }
+  
+  .contenedor > h3 {
+    grid-area: h3;    
+  }
+
+  .contenedor > .count {
+    grid-area: count;    
+  }
