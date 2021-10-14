@@ -1,24 +1,26 @@
 import React from 'react'
 import CartWidget from '../Stateless/CartWidget'
+import {Link} from 'react-router-dom'
+
 import "./NavBar.css"
 
 const Navbar = () => {
-    return (
+    const categoria = ["ropa", "electronica", "joyeria"]
 
+    return (
         <header>
-            <h1>e-commerce</h1>
+            <h1>
+                <Link to="/">
+                    e-commerce
+                </Link>
+            </h1>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Ayuda</a></li>
+                    {categoria.map((nombre) => <li key={nombre}><Link to={`/category/${nombre}`}>{nombre}</Link></li>)}                    
                 </ul>
             </nav>
             <CartWidget/>
         </header>
-
     )
 }
 

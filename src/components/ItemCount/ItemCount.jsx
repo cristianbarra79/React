@@ -20,7 +20,7 @@ const ItemCount = ({stock,initial}) => {
     return (
         <div className="card"> 
             <Button onClick={() => cantidad > 1 ? subtract() : alert("Ingrese cantidad")}>-</Button>
-            <p>{cantidad}</p>
+                <p>{cantidad}</p>
             <Button onClick={() => cantidad < stock ? onAdd() : alert("No hay mas stock")}>+</Button>            
         </div>
 
