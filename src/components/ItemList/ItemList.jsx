@@ -37,8 +37,7 @@ const ItemList = () => {
     useEffect(() => {
         setTimeout(() => {            
             getProductos()
-        }, 2000);
-        
+        }, 2000);        
     }, [category])
 
     return (

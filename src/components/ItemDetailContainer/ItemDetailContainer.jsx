@@ -15,8 +15,7 @@ const ItemDetailContainer = () => {
       setTimeout(() =>{
         let resultado = listado.find(element => element.id == id);        
         resolve(resultado)
-      },2000)
-      
+      },2000)      
     })
     
     const setProducts = async () => {
@@ -35,7 +34,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            {loading ? <h2>Cargando...</h2> : producto && <ItemDetail title={producto.title} price={producto.price} description={producto.description} image={producto.image} count={producto.rating.count} category={producto.category} /> }
+            {loading ? <h2>Cargando...</h2> : producto && <ItemDetail id={producto.id} title={producto.title} price={producto.price} description={producto.description} image={producto.image} count={producto.rating.count} category={producto.category} /> }
         </div>
     )
 }

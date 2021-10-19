@@ -1,12 +1,11 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import {Link} from 'react-router-dom'
-import ItemCount from '../ItemCount/ItemCount';
 import "./Item.css"
 
 const Item = ({id, nombre, descripcion, stock, img, precio, initial}) => {
@@ -31,7 +30,6 @@ const Item = ({id, nombre, descripcion, stock, img, precio, initial}) => {
                 <Typography variant="h4" color="text.primary">
                     ${precio}
                 </Typography>
-                <ItemCount stock={stock} initial={initial}/>                                
                 <CardActions>
                     <Button>
                         <Link to={`/item/${id}`}>Detalles</Link>
