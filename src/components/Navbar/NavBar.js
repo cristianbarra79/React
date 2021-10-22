@@ -19,7 +19,10 @@ const Navbar = () => {
                     {categoria.map((nombre) => <li key={nombre}><Link to={`/category/${nombre}`}>{nombre}</Link></li>)}                    
                 </ul>
             </nav>
-            <CartWidget/>
+            <Link to="/cart">
+                <CartWidget/>
+            </Link>
+            
         </header>
     )
 }
