@@ -14,9 +14,18 @@ export function CartContextProvider({children}) {
             setCarrito([...carrito, {id: item.id, nombre:item.nombre, cantidad: item.cantidad, precio:item.precio}])
         }
     }
+    const limpiarCarrito = () => {
+        setCarrito([])
+    }
+
+    const eliminarItem = (id) => {
+        const filtro = carrito.filter(num => num.id != id)
+        setCarrito(filtro)
+    }
+    
 
     return (
-        <CartContext.Provider value={{carrito, agregarACarrito, setCarrito}}>
+        <CartContext.Provider value={{carrito, agregarACarrito, setCarrito, limpiarCarrito, eliminarItem}}>
             {children}
         </CartContext.Provider>
     )

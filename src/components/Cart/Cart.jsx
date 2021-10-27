@@ -4,17 +4,17 @@ import {CartContext} from '../../context/CartContext.jsx'
 
 const Cart = () => {
 
-    const {carrito, setCarrito} = useContext(CartContext)    
+    const {carrito, limpiarCarrito, eliminarItem} = useContext(CartContext)    
 
-    const limpiar = () => {
-        setCarrito([])
-    }
 
     return (
         <div>
             <h1>Cart</h1>
-            {carrito && carrito.map(item => <h2 key={item.id}>{`Producto ${item.nombre} por ${item.cantidad} subtotal de $${item.cantidad * item.precio}`}</h2>)}
-            <button onClick={limpiar}>Limpiar carrito</button>
+            {carrito && carrito.map(item => <div key={item.id}>
+                <h2>{`Producto: ${item.nombre} por ${item.cantidad} unidades. Subtotal de $${item.cantidad * item.precio}`}</h2>
+                <button onClick={() => eliminarItem(item.id)}>X</button>
+            </div>)}
+            <button onClick={limpiarCarrito}>Limpiar carrito</button>
         </div>
     )
 }
