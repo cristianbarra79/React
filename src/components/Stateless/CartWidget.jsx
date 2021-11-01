@@ -5,12 +5,12 @@ import {CartContext} from '../../context/CartContext.jsx'
 
 const CartWidget = () => {
 
-    const {carrito} = useContext(CartContext)
+    const {itemsTotales} = useContext(CartContext)
 
     return (
         <div>
             <ShoppingCartIcon/>
-            {carrito.length}
+            {itemsTotales()}
         </div>
     )
 }

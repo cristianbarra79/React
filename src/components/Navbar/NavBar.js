@@ -1,15 +1,14 @@
 import React from 'react'
 import CartWidget from '../Stateless/CartWidget'
 import {Link} from 'react-router-dom'
-
 import {useContext} from 'react'
 import {CartContext} from '../../context/CartContext.jsx'
 
 import "./NavBar.css"
 
 const Navbar = () => {
-    const categoria = ["ropa", "electronica", "joyeria"]
 
+    const categoria = ["women's clothing", "men's clothing", "electronics", "jewelery"]
     const {carrito} = useContext(CartContext)
 
     return (
@@ -26,13 +25,10 @@ const Navbar = () => {
             </nav>
             {carrito.length ? 
                 <Link to="/cart">
-                    <CartWidget/>
-                </Link>
-            
+                    <CartWidget/>                    
+                </Link>            
                 : null
-            }
-            
-            
+            }                        
         </header>
     )
 }

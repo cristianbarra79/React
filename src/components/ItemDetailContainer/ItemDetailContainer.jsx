@@ -1,40 +1,34 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import { useParams } from "react-router";
-import { listado } from '../../data/data';
+import {getFirestore} from '../../services/getFirebase'
 import ItemDetail from '../ItemDetail.jsx/ItemDetail'
 
 const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState(null)
     const [loading, setLoading] =useState(true)
-
     const {id} = useParams()
 
-    const getProduct = new Promise((resolve, reject) =>{
-      setTimeout(() =>{
-        let resultado = listado.find(element => element.id == id);        
-        resolve(resultado)
-      },2000)      
-    })
-    
-    const setProducts = async () => {
-      try {
-        const result = await getProduct;
-        setLoading(false)
-        setProducto(result);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+    const getProduct = () =>{
+      const base = getFirestore();
+            const itemColletion = base.collection("items").doc(id)
+            itemColletion.get()
+                .then(resp => setProducto({id: resp.id, ...resp.data() }))
+                .catch(err => console.log(err))
+                .finally(setLoading(false))
+    }
     
     useEffect(() => {
-      setProducts();
+      getProduct();
+    //   setTimeout(() => {
+    //       getProduct()
+    //   }, 2000);
     }, []);
 
     return (
         <div>
-            {loading ? <h2>Cargando...</h2> : producto && <ItemDetail id={producto.id} title={producto.title} price={producto.price} description={producto.description} image={producto.image} count={producto.rating.count} category={producto.category} /> }
+            {loading ? <h2>Cargando...</h2> : producto && <ItemDetail id={producto.id} title={producto.titulo} price={producto.precio} description={producto.descripcion} image={producto.imagen} count={producto.cantidad} category={producto.categoria} /> }
         </div>
     )
 }
