@@ -9,8 +9,10 @@ export function CartContextProvider({children}) {
 
     const agregarACarrito = (item) => {
         if (carrito.some(el => el.id === item.id)) {
-            let indexProducto = carrito.findIndex(x => x.id === item.id);            
-            carrito[indexProducto].cantidad = carrito[indexProducto].cantidad + item.cantidad;            
+            let nuevoCarro = carrito
+            let indexProducto = nuevoCarro.findIndex(x => x.id === item.id);            
+            nuevoCarro[indexProducto].cantidad = nuevoCarro[indexProducto].cantidad + item.cantidad;
+            setCarrito(nuevoCarro)           
         }else{
             setCarrito([...carrito, {id: item.id, nombre:item.nombre, cantidad: item.cantidad, precio:item.precio}])
         }

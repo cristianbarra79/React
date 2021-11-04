@@ -7,6 +7,7 @@ const ItemCount = ({stock,initial, onAdd}) => {
 
     const [cantidad, setCantidad] = useState(initial)
     const [agregado, setAgregado] = useState(false)
+
     
     const sumar = () =>{
         setCantidad(cantidad+1)

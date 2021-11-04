@@ -35,7 +35,7 @@ const Cart = () => {
                     </article>
                     )}
                     
-                    <h1>Total: ${precioTotal()}</h1>
+                    <h2>Total: ${precioTotal()}</h2>
                     <Button onClick={limpiarCarrito} variant="outlined" color="error">
                         Limpiar carrito
                     </Button>                

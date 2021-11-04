@@ -31,10 +31,10 @@ const Item = ({id, nombre, descripcion, stock, img, precio, initial}) => {
                     ${precio}
                 </Typography>
                 <CardActions>
-                    <Button>
+                    <Button variant="contained" size="small">
                         <Link to={`/item/${id}`}>Detalles</Link>
                     </Button>                  
-                    <Button variant="contained" size="small">Comprar</Button>
+                    {/* <Button variant="contained" size="small">Comprar</Button> */}
                 </CardActions>
             </Card>
         </article>

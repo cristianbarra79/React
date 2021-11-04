@@ -1,9 +1,16 @@
+
+.css-o69gx8-MuiCardMedia-root{
+    width: auto!important;
+    display: inline!important;
+}
+.css-1t6e9jv-MuiCardActions-root{
+    justify-content: center;
+}
+article{
+    margin-top: 20px;
+}
 .card{
     display : flex;
     justify-content: center;
     align-items: center;
 }
-/* button{
-    width: 15px;
-    height: 15px;
-} */
