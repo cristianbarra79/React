@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 
 import './Cart.css'
+import CartForm from '../CartForm/CartForm.jsx';
 
 const Cart = () => {
 
@@ -18,6 +19,8 @@ const Cart = () => {
         })
         return total
     }
+
+
 
 
     return (
@@ -38,10 +41,8 @@ const Cart = () => {
                     <h2>Total: ${precioTotal()}</h2>
                     <Button onClick={limpiarCarrito} variant="outlined" color="error">
                         Limpiar carrito
-                    </Button>                
-                    <Button onClick={generarOrden} variant="contained" color="success">
-                        Finalizar compra
-                    </Button>
+                    </Button>                                 
+                    <CartForm generarOrden={generarOrden}/>                    
             </>
             :
                <><h2>Carrito vacio</h2>
