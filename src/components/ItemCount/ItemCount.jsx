@@ -25,14 +25,23 @@ const ItemCount = ({stock,initial, onAdd}) => {
     return (
         <div className="card">
             {!agregado ?
-                <><Button onClick={() => cantidad > 1 ? restar() : alert("Ingrese cantidad")}>-</Button>
-                <p>{cantidad}</p>
-                <Button onClick={() => cantidad < stock ? sumar() : alert("No hay mas stock")}>+</Button>
-                <button onClick={agregar}>Agregar</button></>
+                <>
+                    <Button color="error" onClick={() => cantidad > 1 ? restar() : alert("Ingrese cantidad")}>-</Button>
+                    <p>{cantidad}</p>
+                    <Button color="success" onClick={() => cantidad < stock ? sumar() : alert("No hay mas stock")}>+</Button>                    
+                    <Button variant="contained" color="secondary" onClick={agregar}>Agregar</Button>                    
+                </>
             :
-            <Button variant="contained">
-                <Link to={`/cart`}>TERMINAR</Link>
-            </Button>}
+                <>
+                    <Button sx={{mr: 2}} variant="contained">
+                        <Link to={`/`}>Home</Link>
+                    </Button>
+                    <br />
+                    <Button variant="contained">
+                        <Link to={`/cart`}>TERMINAR</Link>
+                    </Button>
+                </>
+            }
         </div>
 
     )

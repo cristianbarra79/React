@@ -6,7 +6,7 @@ import './ItemDetail.css'
 
 const ItemDetail = ({id, title, price, description, image, count, category}) => {
 
-    const {agregarACarrito, carrito} = useContext(CartContext)
+    const {agregarACarrito} = useContext(CartContext)
 
     const onAdd = (cantidad) =>{
         agregarACarrito({nombre:title, id: id, cantidad:cantidad, precio: price})        
@@ -16,8 +16,8 @@ const ItemDetail = ({id, title, price, description, image, count, category}) => 
         <div className="contenedor">            
             <h1>{title}</h1>
             <img src={image} alt={category} />                
-            <h2>{description}</h2>   
-            <h3>${price}</h3>            
+            <p>{description}</p>   
+            <h3>Precio: ${price}</h3>            
             <ItemCount className="count" stock={count} initial={1} onAdd={onAdd}/>            
         </div>        
     )

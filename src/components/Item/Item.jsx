@@ -8,18 +8,18 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import "./Item.css"
 
-const Item = ({id, nombre, descripcion, stock, img, precio, initial}) => {
+const Item = ({id, nombre, descripcion, img, precio}) => {
 
     return (
         <article>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345, height: '500px' }}>
                 <CardMedia
                     component="img"
                     height="140"
                     image={img}
                     alt={nombre}
                     />
-                <CardContent>
+                <CardContent sx={{ height: '220px', overflow: "hidden"}}>
                     <Typography gutterBottom variant="h5" component="div">
                         {nombre}
                     </Typography>
@@ -33,8 +33,7 @@ const Item = ({id, nombre, descripcion, stock, img, precio, initial}) => {
                 <CardActions>
                     <Button variant="contained" size="small">
                         <Link to={`/item/${id}`}>Detalles</Link>
-                    </Button>                  
-                    {/* <Button variant="contained" size="small">Comprar</Button> */}
+                    </Button>                    
                 </CardActions>
             </Card>
         </article>

@@ -20,15 +20,17 @@ const ItemDetailContainer = () => {
     }
     
     useEffect(() => {
-      getProduct();
-    //   setTimeout(() => {
-    //       getProduct()
-    //   }, 2000);
+        getProduct();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         <div>
-            {loading ? <h2>Cargando...</h2> : producto && <ItemDetail id={producto.id} title={producto.titulo} price={producto.precio} description={producto.descripcion} image={producto.imagen} count={producto.cantidad} category={producto.categoria} /> }
+            {loading ? 
+                <h2>Cargando...</h2> 
+            : 
+                producto && <ItemDetail id={producto.id} title={producto.titulo} price={producto.precio} description={producto.descripcion} image={producto.imagen} count={producto.cantidad} category={producto.categoria} /> 
+            }
         </div>
     )
 }

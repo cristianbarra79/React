@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import {getFirestore} from '../../services/getFirebase'
 import { useParams } from "react-router";
 import ItemList from '../ItemList/ItemList'
+import "./ItemListContainer.css"
 
 const ItemListContainer = ({greeting}) => {
 
@@ -30,17 +31,15 @@ const ItemListContainer = ({greeting}) => {
     }
     
     useEffect(() => {
-        getProducts()
-        // setTimeout(() => {            
-        //     getProducts()
-        // }, 2000);    
+        getProducts()            
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [category])
 
     return (        
-        <div>
+        <main>
             <h2 style={{color: "red"}}>{greeting}</h2>
             {loading ? <h1>Cargando</h1> : <ItemList items={items}/>}
-        </div>
+        </main>
     )
 }
 

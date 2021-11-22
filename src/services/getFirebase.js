@@ -1,10 +1,7 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 
-// Import the functions you need from the SDKs you need
 import "firebase/app";
 import "firebase/firestore"
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 const app = firebase.initializeApp({
   apiKey: "AIzaSyBR8BUx1kr2R0i_0VJb_oiu9ZK_WjC-ZRs",

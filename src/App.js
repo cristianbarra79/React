@@ -4,6 +4,7 @@ import NavBar from './components/Navbar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart'
+import Footer from './components/Footer/Footer'
 import './App.css';
 
 
@@ -13,7 +14,7 @@ function App() {
     <div className="App">      
       <CartContextProvider >
         <BrowserRouter>
-          <NavBar/>
+          <NavBar/>          
           <Switch>
             <Route exact path="/">
               <ItemListContainer greeting="Bienvenido!!!"/>
@@ -28,6 +29,7 @@ function App() {
               <Cart/>
             </Route>           
           </Switch>
+          <Footer/>
         </BrowserRouter>
       </CartContextProvider>
     </div>

@@ -3,32 +3,38 @@
     justify-items: center;    
     margin: auto;
     width: 60%;
-    height: 75vh;
+    /* height: 70vh; */
     grid-template-areas:
         "h1 h1"
-        "img h2"
+        "img p"
         "img h3"
         "img count";
-    grid-template-rows: 1fr 2fr 1fr 1fr;
-    grid-template-columns: 3fr 1fr;    
+    grid-template-rows: 1fr 5fr fr fr;
+    grid-template-columns: 3fr 1fr; 
+    padding-bottom: 175px   
   }
   
   .contenedor > h1 {
-    grid-area: h1;    
+    grid-area: h1;
+    
+
   }
   
   .contenedor > img {
     grid-area: img;
     max-width: 100%;
-    max-height: 100%;    
+    max-height: 100%; 
+       
   }
   
-  .contenedor > h2 {
-    grid-area: h2;
+  .contenedor > p {
+    grid-area: p;
+    font-size: 25px;
   }
   
   .contenedor > h3 {
-    grid-area: h3;    
+    grid-area: h3;  
+      
   }
 
   .contenedor > .count {
